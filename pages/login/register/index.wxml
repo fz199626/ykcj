@@ -1,0 +1,67 @@
+<!--pages/login/register/index.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="logo">
+      <image mode="aspectFill" src="../../../images/logo.png"></image>
+    </view>
+    <view class="icon-title">
+      <image mode="widthFix" src="../../../images/icon-title.png"></image>
+    </view>
+    <form bindsubmit="resBtn" class="register">
+      <van-cell-group class="group">
+        <button wx:if="{{isShowGetPhoneNumberBtn}}" class="getPhoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+        <van-field 
+          input-class="vant-input" 
+          value="{{tel}}" 
+          clearable size="large" 
+          maxlength="11" 
+          name="tel" 
+          left-icon="user-o" 
+          placeholder="请输入手机号码" 
+          bindinput='getTel'/>
+        <van-field 
+          input-class="vant-input" 
+          clearable size="large" 
+          password="{{password1Show}}"
+          right-icon="{{password1Show?'closed-eye':'eye'}}"
+          bind:click-icon="iconBtn1" 
+          maxlength="20" 
+          name="psd" 
+          placeholder="请输入登录密码" 
+          left-icon="lock" />
+        <van-field 
+          input-class="vant-input" 
+          clearable size="large" 
+          password="{{password2Show}}"
+          right-icon="{{password2Show?'closed-eye':'eye'}}"
+          bind:click-icon="iconBtn2"
+          maxlength="20" 
+          name="psd2" 
+          placeholder="请再次输入登录密码" 
+          left-icon="lock" />
+        <van-field 
+          input-class="vant-input" 
+          clearable 
+          name="code" 
+          maxlength="4" 
+          left-icon="underway-o" 
+          center 
+          placeholder="请输入短信验证码" 
+          use-button-slot>
+          <van-button 
+            slot="button" 
+            size="small" 
+            type="primary" 
+            bindtap="getCodeBtn" 
+            disabled="{{btnDisabled}}">
+            {{btnValue}}
+          </van-button>
+        </van-field>
+      </van-cell-group>
+      <button class="btn" disabled="{{disabled}}" formType="submit">确 认</button>
+      <view class="other">
+        <navigator url="/pages/login/index">已有账号？立即登录</navigator>
+      </view>
+    </form>
+  </view>
+</view>

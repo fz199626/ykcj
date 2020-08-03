@@ -1,0 +1,55 @@
+<!--index.wxml-->
+<wxs module="filters" src="../../utils/wxs/filters.wxs"></wxs>
+<view class="container">
+  <view class="live mb15">
+    <!-- <view class="title"><text>大咖解码</text></view> -->
+    <swiper class='swiper' indicator-dots='true' autoplay='true' interval='5000' duration='1000' circular='true'>
+      <block wx:for="{{banner}}" wx:key="index" wx:for-index="index">
+        <swiper-item id="{{index}}" bindtap="bannerJump">
+          <image mode='aspectFill' src='{{item.bannerUrl}}' class='swiper-slide'></image>
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="news">
+      <view class="news-left">
+        <view class="news-left-title">系统公告：</view>
+        <swiper class="news-swiper" vertical="true" autoplay="true" circular="true" interval="3000">
+          <block wx:for="{{msgList}}" wx:key="index">
+            <navigator url="{{filters.substring(item.url,0,5)=='https'?'/pages/web-view/index?url=' + item.url:item.url}}">
+              <swiper-item>
+                <view class="news-swiper-item">{{item.content}}</view>
+              </swiper-item>
+            </navigator>
+          </block>
+        </swiper>
+      </view>
+      <view class="news-right"><van-icon name="bar-chart-o" /></view>
+    </view>
+  </view>
+  <view class="special-column mb15">
+    <view class="title">
+      <view><text>盈宽专栏</text>每日最新嘉宾观点</view><view bindtap="goArticleList">查看全部></view>
+    </view>
+    <view>
+      <view wx:for="{{articleList}}" wx:key="index" id="{{index}}" bindtap="articleJump"  class="special-column-li">
+        <view class="special-column-li-left"><text>【{{item.teacherName}}】</text>{{item.title}}</view>
+        <view class="special-column-li-time">{{filters.substring(item.createTime,0,10)}}</view>
+      </view>
+    </view>
+  </view>
+  <view wx:for="{{videoList}}" wx:key="index" wx:if="{{item.videos.length>0}}" class="teacher mb15">
+    <view class="title">
+      <view><text>{{item.nickName}}</text>最新嘉宾解读</view><view bindtap="goVideoList">查看全部></view>
+    </view>
+    <view class="teacher-ul">
+      <view wx:for="{{item.videos}}" wx:for-item="videos" wx:key="index" bindtap="videoDetail" id="{{videos.id}}" class="teacher-li">
+        <view class="teacher-li-banner">
+          <van-image width="100%" height="100" radius="6" lazy-load show-loading src="{{videos.imgPath}}" />
+          <view class="watched"><van-icon name="play-circle-o" />{{videos.watched}}</view>
+        </view>
+        <view class="teacher-li-title">{{videos.title}}</view>
+        <view class="teacher-li-time">{{videos.updateTime}}</view>
+      </view>
+    </view>
+  </view>
+</view>

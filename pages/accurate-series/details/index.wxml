@@ -1,0 +1,37 @@
+<!--pages/accurate-series/details/index.wxml-->
+<view class="container">
+  <view class="head">
+    <video wx:if="{{isRole}}" src="{{currentVideo.pathUrl}}" autoplay enable-danmu controls></video>
+    <image wx:else mode="aspectFill" src="{{currentVideo.imgPath}}"></image>
+    <view class="head-bottom">
+      <view>
+        <view class="head-bottom-title">{{currentVideo.title}}</view>
+        <view class="head-bottom-time">{{currentVideo.createTime}}</view>
+      </view>
+      <view class="head-bottom-right">
+        <!-- <text class="collect">收藏</text> -->
+        <button open-type='share' class="share">分享</button>
+      </view>
+    </view>
+  </view>
+  <view class="content">
+    <view class="title mb10">系列课程</view>
+    <view>
+      <view wx:for="{{videoList}}" wx:key="index" id="{{index}}" bindtap="changeVideo" class="curriculum mb10">
+        <view class="curriculum-left">
+          <van-image width="100%" height="100" radius="6" lazy-load show-loading src="{{item.imgPath}}" />
+          <view class="watched"><van-icon name="play-circle-o" />{{item.watched}}</view>
+        </view>
+        <view class="curriculum-right">
+          <view class="curriculum-right-top">
+            <view class="curriculum-title">{{item.title}}</view>
+            <view class="label">
+              <text wx:if="{{!item.checked}}">会员</text>
+            </view>
+          </view>
+          <view class="curriculum-time">{{item.createTime}}</view>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

@@ -1,0 +1,8 @@
+{
+  "enablePullDownRefresh": true,
+  "navigationBarTitleText": "准神联盟",
+  "usingComponents": {
+    "van-overlay": "@vant/weapp/overlay/index",
+    "van-image": "@vant/weapp/image/index"
+  }
+}

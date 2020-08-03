@@ -1,0 +1,49 @@
+<!--pages/login/index.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="logo">
+      <image mode="aspectFill" src="../../images/logo.png"></image>
+    </view>
+    <view class="icon-title">
+      <image mode="widthFix" src="../../images/icon-title.png"></image>
+    </view>
+    <view class="login">
+      <van-cell-group class="group">
+        <button wx:if="{{isShowGetPhoneNumberBtn}}" class="getPhoneNumber" open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber"></button>
+        <van-field 
+          input-class="vant-input"
+          size="large" 
+          clearable 
+          bind:change="change" 
+          id="mobile" 
+          error-message="{{mobileMsg}}" 
+          value="{{mobile}}"
+          left-icon="user-o"
+          maxlength="11"
+          placeholder="请输入手机号码"/>
+        <van-field 
+          input-class="vant-input" 
+          size="large" 
+          clearable 
+          bind:change="change" 
+          bind:focus="focus" 
+          password="{{passwordShow}}"
+          right-icon="{{passwordShow?'closed-eye':'eye'}}"
+          bind:click-icon="iconBtn" 
+          id="password" 
+          maxlength="20"
+          left-icon="lock"
+          placeholder="请输入登录密码" />
+      </van-cell-group>
+      <view class="btns">
+        <button class="btn cancel" bindtap="cancelLogin">取 消</button>
+        <button class="btn" disabled="{{disabled}}" bindtap="userlogin">登 录</button>
+      </view>
+      <view class="other">
+        <navigator url="/pages/login/register/index">没有账号？立即注册</navigator>
+        <navigator url="/pages/login/forget-check/index">忘记密码</navigator>
+      </view>
+    </view>
+  <view class="tips">检测到当前微信暂未绑定平台账户，请进行登录绑定</view>
+  </view>
+</view>

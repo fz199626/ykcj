@@ -1,0 +1,16 @@
+/* pages/about/index.wxss */
+.container{
+  background: #fff;
+  padding: 15px;
+}
+.title{
+  border-left: 3px solid #ff6428;
+  padding-left: 5px;
+  font-size: 16px;
+}
+.text{
+  font-size: 14px;
+  color: #999;
+  padding-left: 8px;
+  margin: 5px 0;
+}

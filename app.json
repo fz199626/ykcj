@@ -1,0 +1,44 @@
+{
+  "pages": [
+    "pages/union/index",
+    "pages/login/getUserInfo/index",
+    "pages/login/index",
+    "pages/daily-column/index",
+    "pages/accurate-series/details/index",
+    "pages/login/register/index",
+    "pages/web-view/index",
+    "pages/union/room/index",
+    "pages/daily-column/details/index",
+    "pages/login/forget-check/index",
+    "pages/login/forget-reset/index",
+    "pages/accurate-series/index",
+    "pages/personal/index",
+    "pages/personal/about/index",
+    "pages/logs/logs"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#efefef",
+    "navigationBarTitleText": "解码交易",
+    "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#333",
+    "selectedColor": "#ff6428",
+    "list": [
+      {
+        "iconPath": "./images/icon_02.png",
+        "selectedIconPath": "./images/icon_22.png",
+        "pagePath": "pages/union/index",
+        "text": "准神联盟"
+      },
+      {
+        "iconPath": "./images/icon_03.png",
+        "selectedIconPath": "./images/icon_33.png",
+        "pagePath": "pages/personal/index",
+        "text": "我的"
+      }
+    ]
+  },
+  "sitemapLocation": "sitemap.json"
+}

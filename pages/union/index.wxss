@@ -1,0 +1,87 @@
+/* pages/union/index.wxss */
+.container{
+  padding: 10px;
+}
+.title{
+  font-size: 16px;
+  font-weight: bold;
+  border-left: 3px solid #ff6428;
+  padding-left: 8px;
+}
+.nuion{
+  background: #fff;
+  border-radius: 6px;
+  overflow: hidden;
+}
+.nuion-title{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 10px;
+  letter-spacing: 1px;
+  font-size: 15px;
+  color: #888;
+}
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block{
+  width: 250px;
+  background-color: #fff;
+  position: relative;
+  padding: 30px;
+}
+.block-title{
+  text-align: center;
+  font-size: 16px;
+}
+.block-text{
+  margin: 10px 0;
+}
+.block-text text{
+  color: #ff6428;
+}
+.icon-cross{
+  position: absolute;
+  top: 5px;
+  right: 5px;
+}
+.form input{
+  /* border: 1px solid #eee; */
+  margin: 15px 0;
+  border-radius: 5px;
+  padding: 8px;
+  width: 234px;
+  font-size: 14px;
+  color: #666;
+}
+.btn{
+  margin: 15px auto;
+  color: #fff;
+  background: #ff6428;
+}
+.password{
+  border-radius: 10px;
+}
+.password input{
+  margin: 20px 0;
+  text-align: center;
+}
+.psd-btn{
+  display: flex;
+  justify-content: space-between;
+}
+.psd-btn button{
+  margin: 0;
+  width: 47%;
+}
+.close{
+  background: #ccc;
+  border: 0;
+}

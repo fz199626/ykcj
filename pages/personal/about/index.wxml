@@ -1,0 +1,99 @@
+<!--pages/about/index.wxml-->
+<view class="container">
+  <view class="mb15">
+    <view class="title">
+      公司简介
+    </view>
+    <view class="text">
+      盈宽财经坐落于国家金融中心上海，是一家有着强大投资背景和研发实力的公司，专注于期货投资领域的深度研究，致力于为广大投资者构建期货盈利体系。其研究的量化体系：利用计算机技术从历史数据中海选能带来超额收益的“大概率”事件，并制定数学模型，以程序化交易代替人为的主观判断的投资方式，处于行业前列。
+为了更好地适应市场需求，公司也积极尝试各种新的业务渠道，与华创期货、创元期货、德盛期货、东华期货、 迈科期货等多家正规备案期货公司结成合作伙伴关系，成为期货公司技术支持服务机构，为通过在国内四大期货交易所进行交易的客户提供研究服务策略支持与技术支持，成为以人工智能为内核的新一代智能财经服务平台。
+    </view>
+  </view>
+  
+  <view class="mb15">
+    <view class="title">
+      核心价值观
+    </view>
+    <view class="text">
+      盈宽财经，构建你的期货盈利体系
+    </view>
+    <view class="text">
+      经营理念
+    </view>
+    <view class="text">
+      精细——每一位客户、每一个细节，都是为了服务而生。
+    </view>
+    <view class="text">
+      支持——客户的信任是对量旗最大的支持，客户的支持是我们不断前进的动力。
+    </view>
+    <view class="text">
+      专业——坚持以人为本的人才战略，打造多层次高素质的职业化服务团队，不断创新业务体系，提供大数据时代的量化服务支持。
+    </view>
+    <view class="text">
+      共赢——以合作共赢为宗旨，盈宽财经为客户提供真实有效的投资讯息，让每一位客户都能享受全方位的投资服务。
+    </view>
+  </view>
+
+  <view class="mb15">
+    <view class="title">
+      公司使命
+    </view>
+    <view class="text">
+      树立业界之口碑
+    </view>
+    <view class="text">
+      为客户创造价值
+    </view>
+    <view class="text">
+      让员工财务自由
+    </view>
+  </view>
+
+  <view class="mb15">
+    <view class="title">
+      公司愿景
+    </view>
+    <view class="text">
+      量化投资的运营专家，大数据模式的践行者，期货投资教育的开拓者。
+    </view>
+  </view>
+
+  <view class="mb15">
+    <view class="title">
+      公司优势
+    </view>
+    <view class="text">
+      安全的资金保证：第三方银行存管
+    </view>
+  </view>
+
+  <view class="mb15">
+    <view class="title">
+      强大的合作伙伴：迈科期货
+    </view>
+    <view class="text">
+      华创期货、创元期货、德盛期货、东华期货、
+    </view>
+  </view>
+
+  <view class="mb15">
+    <view class="title">
+      专业的人员配置
+    </view>
+    <view class="text">
+      直播团队、研究团队、风控团队、服务团队、量化团队、技术团队
+    </view>
+  </view>
+
+  <view class="mb15">
+    <view class="title">
+      完善的服务体系
+    </view>
+    <view class="text">
+      智能交易软件、免费直播室、专业课程、量化交易系统、微信一对一、文字直播间、风控经理一对一、专属客服经理、资产配置计划
+    </view>
+    <view class="text">
+      领先的技术支持：以技术驱动金融，利用计算机技术从历史数据中海选能带来超额收益的“大概率”事件，并制定数学模型，研发出趋势跑道、趋势买点等交易系统。
+    </view>
+  </view>
+</view>

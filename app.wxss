@@ -1,0 +1,11 @@
+/**app.wxss**/
+page{
+  height: 100%;
+  color: #333;
+  background: #efefef;
+  font-size: 28rpx;
+}
+image,video{display: block;}
+.mb10{margin-bottom: 10px;}
+.mb15{margin-bottom: 15px;}
+.vant-input{padding-left: 3px !important;}

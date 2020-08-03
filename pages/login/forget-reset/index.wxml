@@ -1,0 +1,40 @@
+<!--pages/login/forget-reset/index.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="logo">
+      <image mode="aspectFill" src="../../../images/logo.png"></image>
+    </view>
+    <view class="icon-title">
+      <image mode="widthFix" src="../../../images/icon-title.png"></image>
+    </view>
+    <view class="login">
+      <van-cell-group>
+        <van-field 
+          input-class="vant-input" 
+          clearable size="large" 
+          password="{{password1Show}}"
+          right-icon="{{password1Show?'closed-eye':'eye'}}"
+          bind:click-icon="iconBtn1"
+          id="pass1" 
+          bind:change="change" 
+          error-message="{{pass1Msg}}" 
+          maxlength="20"
+          placeholder="请输入登录密码" 
+          left-icon="lock" />
+        <van-field 
+          input-class="vant-input" 
+          clearable size="large" 
+          password="{{password2Show}}"
+          right-icon="{{password2Show?'closed-eye':'eye'}}"
+          bind:click-icon="iconBtn2"
+          id="pass2" 
+          bind:change="change" 
+          bind:focus="focus" 
+          maxlength="20"
+          placeholder="请再次输入登录密码"
+          left-icon="lock" />
+      </van-cell-group>
+      <button class="btn" disabled="{{disabled}}" bindtap="btn">确 认</button>
+    </view>
+  </view>
+</view>

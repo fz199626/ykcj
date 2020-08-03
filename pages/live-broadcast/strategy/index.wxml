@@ -1,0 +1,39 @@
+<!--pages/live-broadcast/strategy/index.wxml-->
+<view class="container">
+  <view class="strategy-btn">
+    <text 
+      wx:for="{{strategyList}}" wx:key="index" id="{{item.id}}"
+      class="{{item.id==1?'btn-left':'btn-right'}} {{item.id==strategyIndex?'btn-select':''}}"
+      bindtap="strategy"
+    >{{item.text}}</text>
+  </view>
+  <van-tabs sticky active="{{teacherId}}" bind:change="onChange">
+    <van-tab wx:for="{{teacherList}}" title="{{item.realName}}" wx:key="index">
+      
+    </van-tab>
+  </van-tabs>
+  <view class="content" wx:if="{{strategies.length !== 0}}">
+    <view class="strategy" wx:for="{{strategies}}" wx:key="index">
+      <view class="strategy-top">
+        <view class="strategy-title">
+          {{item.varietiesName}}
+          <text class="sell" wx:if="{{item.direction == '0'}}">买入</text>
+          <text class="buy" wx:elif="{{item.direction == '1'}}">卖出</text>
+        </view>
+        <view class="strategy-time">{{item.sellingTime}}</view>
+      </view>
+      <view class="strategy-content">
+        <view>建仓价<text>{{item.hedgeyePrice?item.hedgeyePrice:''}}</text></view>
+        <view>止损价<text>{{item.stopPrice?item.stopPrice:''}}</text></view>
+        <view>平仓价<text>{{item.sellingPrice?item.sellingPrice:''}}</text></view>
+        <view>止盈价<text>{{item.targetProfitPrice?item.targetProfitPrice:''}}</text></view>
+        <view>盈亏<text class="{{item.profit >= 0?'red':'green'}}">{{item.profit?item.profit:''}}</text></view>
+        <view>讲师<text>{{item.teacherName}}</text></view>
+      </view>
+      <!-- <view class="strategy-bottom">平仓时间<text>{{item.sellingTime?item.sellingTime:''}}</text></view> -->
+    </view>
+  </view>
+  <view class="content" wx:else>
+    <view class="no-strategy">暂无策略</view>
+  </view>
+</view>

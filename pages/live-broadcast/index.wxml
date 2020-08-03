@@ -1,0 +1,115 @@
+<!--pages/live-broadcast/index.wxml-->
+<wxs module="filters" src="./../../utils/wxs/filters.wxs"></wxs>
+<view class="container">
+  <view class="banner" wx:if="{{isLiveing}}">
+    <video  wx:if="{{isVideo}}" src="{{liveUrl}}" autoplay enable-danmu controls></video>
+  </view>
+  <view class="banner" wx:else>
+    <video src="{{videoUrl}}" autoplay enable-danmu controls></video>
+    <view wx:if="{{isback}}" bindtap="PlayLive" class="back">返回直播</view>
+  </view>
+  <view>
+    <van-tabs swipeable line-width="115" bind:change="onChange">
+      <van-tab title="互动">
+        <view class="tab-card" style="padding: 0;bottom: 44px;">
+          <scroll-view class="scroll" scroll-y scroll-into-view='msg{{toView}}' bindscrolltoupper="detail">
+            <view class="item" wx:for="{{detail}}" wx:key="index" id="msg{{index}}">
+              <view class="head-img">
+                <image src="{{item.headimg?item.headimg:avatarUrl}}"/>
+              </view>
+              <view class="user">
+                <view class="user-top">
+                  <view class="user-name">{{item.name}}</view> 
+                  <view class="user-time">{{filters.getDateTime(item.addtime)}}</view>
+                </view>
+                <image wx:if="{{filters.substring(item.attach,0,4)=='http'}}" class="user-content-img" id="{{item.attach}}" bindtap="preview" mode='widthFix' src="{{item.attach}}"></image>
+                <view wx:else class='user-content'>
+                  <rich-text class="{{item.roleId != 0?'red':''}}" nodes="{{item.attach}}"></rich-text>
+                  <view wx:if="{{item.ext.other}}" class="other">
+                    <rich-text nodes="{{item.ext.other.content}}"></rich-text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </van-tab>
+      <van-tab title="往期课程">
+        <view class="tab-card">
+          <view wx:for="{{recommendedVideoList}}" wx:key="index" bindtap="curriculum" id="{{index}}" class="curriculum mb10">
+            <view class="curriculum-left">
+              <van-image width="100%" height="100" radius="6" lazy-load show-loading src="{{item.cover}}" />
+            </view>
+            <view class="curriculum-right">
+              <view class="curriculum-right-top">
+                <view class="curriculum-title">{{item.liveTitle}}</view>
+                <view class="label">
+                  <!-- <text>会员</text> -->
+                </view>
+              </view>
+              <view class="curriculum-time">{{item.addtime}}</view>
+            </view>
+          </view>
+        </view>
+      </van-tab>
+      <van-tab title="介绍">
+        <view class="tab-card">
+          <view class="title mb10">直播间简介</view>
+          <view class="text">{{Description}}</view>
+          <view class="title mb10">联盟团队介绍</view>
+          <image class="personnel-image" mode='widthFix' src="{{introduce.headImg}}"></image>
+          <view class="personnel-name">{{introduce.name}}</view>
+          <view class="text">{{introduce.details}}</view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <view class="popup-btn">
+    <view bindtap="overlayShow">留言咨询</view>
+    <view bindtap="strategy">查看策略</view>
+  </view>
+  <van-overlay show="{{isOverlayShow}}" bindtap="overlayHide">
+    <view class="wrapper">
+      <view class="block" catchtap="noop">
+        <van-icon bindtap="overlayHide" class="icon-cross" name="cross" size="24px" color="#999" />
+        <view class="block-title">留言咨询区</view>
+        <view class="block-text">尊敬的客户，如果你对<text>手中的持仓、老师观点、投资产品、开户流程</text>等有疑问。请留言咨询，24小时内我司客服会与您联系！</view>
+        <form class="form" bindsubmit="overlay">
+          <input name="phone" type="text" adjust-position="{{false}}" placeholder="请输入手机号" />
+          <textarea name="content" adjust-position="{{false}}" show-confirm-bar="{{false}}" placeholder="请在此描述您的问题，限200字" maxlength="200"></textarea>
+          <button class="btn" form-type="submit">提交留言</button>
+        </form>
+      </view>
+    </view>
+  </van-overlay>
+  <van-overlay show="{{isPsdShow}}" bindtap="psdHide">
+    <view class="wrapper">
+      <view class="block password" catchtap="noop">
+        <view class="block-title">内部会员收看时间</view>
+        <form class="form" bindsubmit="psdBtn">
+          <input name="password" type="password" placeholder="请输入口令" />
+          <view class="psd-btn">
+            <button class="btn" form-type="submit">确认</button>
+            <button class="btn close" bindtap="psdHide">取消</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </van-overlay>
+  <view class="send" style="bottom: {{inputHeight}}px;" wx:if="{{inputShow}}">
+    <view class="send-left">
+      <view class="smile" bindtap="emojiShow">
+        <van-icon name="smile-o" size="24px" />
+      </view>
+      <input type="text" adjust-position="{{false}}" bindinput='getContent' value="{{content}}" bindfocus="inputFocus"  bindblur="blur" placeholder="来跟大神聊聊天" />
+    </view>
+    <view class="send-btn" bindtap="send">发 送</view>
+  </view>
+  <van-popup show="{{emojiShow}}" position="bottom" bind:close="onClose" custom-style="height: 246.64px;">
+    <view class="emojiCode">
+      <view wx:for="{{emojiCode}}" wx:key="index" id="{{index}}" bindtap="emoji">
+        <van-image image-class="c" width="25.44" height="25.44" radius="6" lazy-load show-loading src="https://i0.niuguwang.com/emoji/emoji_{{item}}.png" />
+      </view>
+    </view>
+  </van-popup>
+</view>

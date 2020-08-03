@@ -1,0 +1,33 @@
+<!--pages/daily-column/index.wxml-->
+<wxs module="filters" src="../../utils/wxs/filters.wxs"></wxs>
+<view class="container">
+  <van-dropdown-menu active-color="#ee0a24" class="dropdown-menu">
+    <van-dropdown-item wx:if="{{option0.length != 0}}" value="{{value0}}" options="{{option0}}" bind:change="valueChange" id="0" />
+    <van-dropdown-item wx:if="{{option1.length != 0}}" value="{{value1}}" options="{{option1}}" bind:change="valueChange" id="1" />
+    <van-dropdown-item wx:if="{{option2.length != 0}}" value="{{value2}}" options="{{option2}}" bind:change="valueChange" id="2" />
+  </van-dropdown-menu>
+  <view class="column-list">
+    <view wx:for="{{columnList}}" wx:key="index" id="{{index}}" bindtap="articleJump" class="column-li">
+      <view class="column-li-top">
+        <view class="title">{{item.title}}</view>
+        <view class="column-li-right">
+          <view wx:if="{{item.isTop}}" class="isTop">
+            <van-icon name="fire-o" color="#fff" size="12px" />
+          </view>
+          <view class="isRole {{!item.checked?'role':''}}">
+            <van-icon name="lock" color="#fff" size="12px" />
+          </view>
+        </view>
+      </view>
+      <rich-text class='text' nodes="{{item.abstract}}"></rich-text>
+      <view class="data">
+        <view>{{filters.substring(item.createTime,0,10)}}</view>
+        <view>阅读数({{item.watched}})</view>
+        <view catchtap="praise" id="{{index}}">
+          <van-icon name="good-job" color="{{item.isLike?'#ff6428':'#999'}}" size="14px" />
+          <text>({{item.likedCount}})</text>
+        </view>
+      </view>
+    </view>
+  </view>
+</view>

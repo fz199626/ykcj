@@ -1,0 +1,166 @@
+/* pages/union/room/index.wxss */
+.container{
+  height: 100%;
+}
+.banner image{
+  width: 100%;
+  height: 150px;
+}
+.content{
+  height: calc(100% - 150px);
+}
+.tab-card,.van-tab__pane{
+  position: fixed;
+  top: 194px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: auto;
+}
+.scroll{
+  height: 100%;
+}
+.item{
+  margin: 10px 20px 10px 10px;
+  display: flex;
+}
+.head-img {
+  margin-right: 15px;
+}
+.head-img image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user{
+  display: initial;
+}
+.user-top{
+  display: flex;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+.user-name{
+  font-size: 13px;
+  margin-right: 10px;
+  color: #666;
+  padding-left: 2px;
+}
+.user-time{
+  color: #999;
+  word-break: break-all;
+  overflow: hidden;
+}
+.user-content{
+  display: inline-block;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #e2e9f1;
+  position: relative;
+  word-break: break-all;
+}
+.user-content::after{
+  display: block;
+  content: '';
+  border-width: 8px 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  position: absolute;
+  left: -15px;
+  top: 6px;
+}
+.user-content-img{
+  max-width: 100px;
+}
+
+.send{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: rgb(241, 238, 238);
+}
+.send-left{
+  flex: 1;
+  display: flex;
+}
+.send input{
+  flex: 1;
+  background: #fff;
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 10px;
+}
+.smile{
+  height: 32px;
+  line-height: 32px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center
+}
+.send-btn{
+  height: 32px;
+  line-height: 32px;
+  background: #258CFD;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-left: 15px;
+}
+
+
+.personnel-title{
+  border-left: 3px solid #ff6428;
+  padding-left: 5px;
+  font-size: 16px;
+}
+.personnel-text{
+  font-size: 14px;
+  color: #999;
+  padding-left: 8px;
+  margin: 10px 0;
+}
+.personnel image{
+  width: 160px;
+  margin: 10px auto 5px;
+}
+.personnel-name{
+  text-align: center;
+  color: #444;
+}
+.red{
+  color: red;
+}
+.other{
+  border-top: 1px solid #efefef;
+  padding-top:3px;
+  margin-top:2px;
+}
+.emojiCode{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 6px;
+}
+.emojiCode view{
+  width: 12.5%;
+}
+.emojiCode view{
+  width: 12.5%;
+  text-align: center;
+}
+.van-image{
+  margin: 7px auto;
+}
+.smile{
+  height: 32px;
+  line-height: 32px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center
+}

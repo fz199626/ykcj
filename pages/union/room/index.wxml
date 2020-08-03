@@ -1,0 +1,109 @@
+<!--pages/union/room/index.wxml-->
+<wxs module="filters" src="../../../utils/wxs/filters.wxs"></wxs>
+<view class="container">
+  <view class="banner">
+    <image mode='aspectFill' src="{{WxBanner}}"></image>
+  </view>
+  <view class="content">
+    <van-tabs swipeable line-width="83.75" bind:change="onChange" active="1">
+      <van-tab title="嘉宾观点" name="1">
+        <view class="tab-card">
+          <scroll-view scroll-with-animation class="scroll" scroll-y scroll-into-view='msg{{toView}}' bindscrolltoupper="refresh">
+            <view class="item" wx:for="{{detail}}" wx:key="index" id="msg{{index}}">
+              <view class="head-img">
+                <image src="{{item.headimg?item.headimg:avatarUrl}}"/>
+              </view>
+              <view class="user">
+                <view class="user-top">
+                  <view class="user-name">{{item.name}}</view> 
+                  <view class="user-time">{{filters.getDateTime(item.addtime)}}</view>
+                </view> 
+                <image wx:if="{{filters.substring(item.attach,0,4)=='http'}}" class="user-content-img" id="{{item.attach}}" bindtap="preview" mode='widthFix' src="{{item.attach}}"></image>
+                <view wx:else class='user-content'>
+                  <rich-text class="{{item.roleId == 0?'red':''}}" nodes="{{item.attach}}"></rich-text>
+                  <view wx:if="{{item.ext.other}}" class="other">
+                    <rich-text nodes="{{item.ext.other.content}}"></rich-text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </van-tab>
+      <van-tab title="问答" name="2">
+        <view class="tab-card" style="bottom: 44px;">
+          <scroll-view scroll-with-animation class="scroll" scroll-y scroll-into-view='msg{{toView}}' bindscrolltoupper="refresh">
+            <view class="item" wx:for="{{detail}}" wx:key="index" id="msg{{index}}">
+              <view class="head-img">
+                <image src="{{item.headimg?item.headimg:avatarUrl}}"/>
+              </view>
+              <view class="user">
+                <view class="user-top">
+                  <view class="user-name">{{item.name}}</view> 
+                  <view class="user-time">{{filters.getDateTime(item.addtime)}}</view>
+                </view>
+                <image wx:if="{{filters.substring(item.attach,0,4)=='http'}}" class="user-content-img" id="{{item.attach}}" bindtap="preview" mode='widthFix' src="{{item.attach}}"></image>
+                <view wx:else class='user-content'>
+                  <rich-text class="{{item.roleId == 0?'red':''}}" nodes="{{item.attach}}"></rich-text>
+                  <view wx:if="{{item.ext.other}}" class="other">
+                    <rich-text nodes="{{item.ext.other.content}}"></rich-text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+        <view class="send" style="bottom: {{inputHeight}}px;">
+          <view class="send-left">
+            <view class="smile" bindtap="emojiShow">
+              <van-icon name="smile-o" size="24px" />
+            </view>
+            <input type="text" adjust-position="{{false}}" bindinput='getContent' value="{{content}}" bindfocus="inputFocus"  bindblur="blur" placeholder="来跟大神聊聊天" />
+          </view>
+          <view class="send-btn" bindtap="send">发 送</view>
+        </view>
+      </van-tab>
+      <van-tab title="核心观点" name="0">
+        <view class="tab-card">
+          <scroll-view scroll-with-animation class="scroll" scroll-y scroll-into-view='msg{{toView}}' bindscrolltoupper="refresh">
+            <view class="item" wx:for="{{detail}}" wx:key="index" id="msg{{index}}">
+              <view class="head-img">
+                <image src="{{item.headimg?item.headimg:avatarUrl}}"/>
+              </view>
+              <view class="user">
+                <view class="user-top">
+                  <view class="user-name">{{item.name}}</view> 
+                  <view class="user-time">{{filters.getDateTime(item.addtime)}}</view>
+                </view>
+                <image wx:if="{{filters.substring(item.attach,0,4)=='http'}}" class="user-content-img" id="{{item.attach}}" bindtap="preview" mode='widthFix' src="{{item.attach}}"></image>
+                <view wx:else class='user-content'>
+                  <rich-text class="{{item.roleId == 0?'red':''}}" nodes="{{item.attach}}"></rich-text>
+                  <view wx:if="{{item.ext.other}}" class="other">
+                    <rich-text nodes="{{item.ext.other.content}}"></rich-text>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </scroll-view>
+        </view>
+      </van-tab>
+      <van-tab title="介绍" name="3">
+        <view class="tab-card personnel" style="padding: 10px 15px;">
+          <view class="personnel-title">简介</view>
+          <view class="personnel-text">{{Description}}</view>
+          <view class="personnel-title">联盟风采介绍</view>
+          <image mode='widthFix' src="{{introduce.headImg}}"></image>
+          <view class="personnel-name">{{introduce.name}}</view>
+          <view class="personnel-text">{{introduce.details}}</view>
+        </view>
+      </van-tab>
+    </van-tabs>
+  </view>
+  <van-popup show="{{emojiShow}}" position="bottom" bind:close="onClose" custom-style="height: 246.64px;">
+    <view class="emojiCode">
+      <view wx:for="{{emojiCode}}" wx:key="index" id="{{index}}" bindtap="emoji">
+        <van-image width="25.44" height="25.44" radius="6" lazy-load show-loading src="https://i0.niuguwang.com/emoji/emoji_{{item}}.png" />
+      </view>
+    </view>
+  </van-popup>
+</view>

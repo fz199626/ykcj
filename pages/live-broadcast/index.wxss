@@ -1,0 +1,303 @@
+/* pages/live-broadcast/index.wxss */
+.container{
+  height: 100%;
+}
+.banner{
+  font-size: 0;
+}
+.banner{
+  width: 100%;
+  height: 211px;
+  background: #000;
+}
+.banner video{
+  width: 100%;
+  height: 100%;
+}
+.back{
+  color: #fff;
+  background: rgba(255, 255, 255, .4);
+  font-size: 12px;
+  padding: 2px 7px;
+  border-radius: 5px;
+  position: fixed;
+  top: 10px;
+  right: 10px;
+  z-index: 999;
+}
+.tab-card,.van-tab__pane{
+  padding: 10px;
+  overflow: auto;
+  position: fixed;
+  top: 254px;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.scroll{
+  height: 100%;
+}
+
+.send{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 34px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 5px 10px;
+  background: rgb(241, 238, 238);
+}
+.send-left{
+  flex: 1;
+  display: flex;
+}
+.send input{
+  flex: 1;
+  background: #fff;
+  border-radius: 5px;
+  height: 32px;
+  padding: 0 10px;
+}
+.smile{
+  height: 32px;
+  line-height: 32px;
+  padding: 0 5px;
+  display: flex;
+  align-items: center
+}
+.send-btn{
+  height: 32px;
+  line-height: 32px;
+  background: #258CFD;
+  color: #fff;
+  border-radius: 3px;
+  padding: 0 10px;
+  margin-left: 15px;
+}
+
+
+.item{
+  margin: 10px 30px 10px 10px;
+  display: flex;
+}
+.head-img {
+  margin-right: 15px;
+}
+.head-img image{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+.user{
+  display: initial
+}
+.user-top{
+  display: flex;
+  font-size: 12px;
+  margin-bottom: 2px;
+}
+.user-name{
+  font-size: 13px;
+  margin-right: 10px;
+  color: #666;
+  padding-left: 2px;
+}
+.user-time{
+  color: #999;
+  word-break: break-all;
+  overflow: hidden;
+}
+.user-content{
+  display: inline-block;
+  background: #fff;
+  padding: 6px 10px;
+  border-radius: 5px;
+  border: 1px solid #e2e9f1;
+  position: relative;
+  word-break: break-all;
+}
+.user-content::after{
+  display: block;
+  content: '';
+  border-width: 8px 8px 8px 8px;
+  border-style: solid;
+  border-color: transparent #fff transparent transparent;
+  position: absolute;
+  left: -15px;
+  top: 6px;
+}
+.red{
+  color: red;
+}
+.user-content-img{
+  max-width: 100px;
+}
+.other{
+  border-top: 1px solid #efefef;
+  padding-top:3px;
+  margin-top:2px;
+}
+
+
+.curriculum{
+  display: flex;
+}
+.curriculum-left{
+  width: 48%;
+  margin-right: 2%;
+  font-size: 0;
+}
+.curriculum-right-top{
+  height: 80px;
+}
+.curriculum-title{
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  letter-spacing: 1px;
+}
+.label text{
+  background: #ccc;
+  margin: 0 2px;
+  font-size: 10px;
+  border-radius: 4px;
+  padding: 1px 5px;
+  color: #fff;
+}
+.curriculum-time{
+  height: 20px;
+  color: #999;
+  font-size: 12px;
+}
+
+.title{
+  font-size: 16px;
+  font-weight: bold;
+  border-left: 3px solid #ff6428;
+  padding-left: 8px;
+  margin-top: 10PX;
+}
+.personnel-image{
+  width: 240px;
+  margin: 10px auto 5px;
+}
+.personnel-name{
+  text-align: center;
+  color: #444;
+}
+.text{
+  font-size: 14px;
+  color: #999;
+  padding: 0 8px;
+  margin: 5px 0;
+}
+.popup-btn{
+  position: fixed;
+  top: 60%;
+  right: 0;
+  margin-top: -93px;
+}
+.popup-btn view{
+  width: 20px;
+  background: #ff6428;
+  color: #fff;
+  text-align: center;
+  margin: 10px 0;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  font-size: 12px;
+  padding: 5px 2px;
+}
+
+.wrapper{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.block{
+  width: 250px;
+  background-color: #fff;
+  position: relative;
+  padding: 30px;
+}
+.block-title{
+  text-align: center;
+  font-size: 16px;
+}
+.block-text{
+  margin: 10px 0;
+}
+.block-text text{
+  color: #ff6428;
+}
+.icon-cross{
+  position: absolute;
+  top: 8px;
+  right: 8px;
+}
+.form input,
+.form textarea{
+  border: 1px solid #eee;
+  margin: 15px 0;
+  border-radius: 5px;
+  padding: 8px;
+  width: 234px;
+  font-size: 14px;
+}
+.form textarea{
+  height: 80px;
+}
+.btn{
+  margin: 15px auto;
+  color: #fff;
+  background: #ff6428;
+}
+
+
+.password{
+  border-radius: 10px;
+}
+.password input{
+  margin: 20px 0;
+  text-align: center;
+}
+.psd-btn{
+  display: flex;
+  justify-content: space-between;
+}
+.psd-btn button{
+  margin: 0;
+  width: 47%;
+}
+.close{
+  background: #ccc;
+  border: 0;
+}
+.attach{
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  height: 150px;
+  padding: 5px 20px;
+  background: #efefef;
+}
+.emojiCode{
+  display: flex;
+  flex-wrap: wrap;
+  padding: 10px;
+}
+.emojiCode view{
+  width: 12.5%;
+  text-align: center;
+}
+.van-image{
+  margin: 7px auto;
+}

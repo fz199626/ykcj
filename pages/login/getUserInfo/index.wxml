@@ -1,0 +1,18 @@
+<!--pages/login/getUserInfo/index.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="logo">
+      <image mode="aspectFill" src="../../../images/logo.png"></image>
+    </view>
+    <view class="icon-title">
+      <image mode="widthFix" src="../../../images/icon-title.png"></image>
+    </view>
+    <view class="br"></view>
+    <view class="tips bold">即将登陆小程序解码交易</view>
+    <view class="tips"><text></text>使用您的账号登陆该应用</view>
+    <view class="btns">
+      <button class="btn cancel" bindtap="cancelLogin">取 消</button>
+      <button class="btn" open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">点击授权</button>
+    </view>
+  </view>
+</view>

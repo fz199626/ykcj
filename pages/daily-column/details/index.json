@@ -1,0 +1,7 @@
+{
+  "navigationBarTitleText": "盈宽专栏",
+  "usingComponents": {
+    "van-icon": "@vant/weapp/icon/index",
+    "van-popup": "@vant/weapp/popup/index"
+  }
+}

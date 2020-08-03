@@ -1,0 +1,45 @@
+<!--pages/login/forget-check/index.wxml-->
+<view class="container">
+  <view class="content">
+    <view class="logo">
+      <image mode="aspectFill" src="../../../images/logo.png"></image>
+    </view>
+    <view class="icon-title">
+      <image mode="widthFix" src="../../../images/icon-title.png"></image>
+    </view>
+    <view class="login">
+      <van-cell-group>
+        <van-field 
+          input-class="vant-input" 
+          clearable size="large" 
+          bind:change="change" 
+          error-message="{{telMsg}}" 
+          id="tel" 
+          maxlength="11"
+          left-icon="user-o" 
+          placeholder="请输入手机号码"/>
+        <van-field 
+          input-class="vant-input" 
+          clearable 
+          bind:change="change" 
+           bind:focus="focus"
+          id="code" 
+          left-icon="underway-o" 
+          maxlength="4"
+          center 
+          placeholder="请输入短信验证码" 
+          use-button-slot >
+          <van-button 
+            slot="button" 
+            size="small" 
+            type="primary" 
+            bindtap="sendCoed" 
+            disabled="{{btnDisabled}}">
+            {{btnValue}}
+          </van-button>
+        </van-field>
+      </van-cell-group>
+      <button class="btn" disabled="{{disabled}}" bindtap="goReset">确 认</button>
+    </view>
+  </view>
+</view>

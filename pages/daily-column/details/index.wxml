@@ -1,0 +1,19 @@
+<!--pages/daily-column/details/index.wxml-->
+<wxs module="filters" src="../../../utils/wxs/filters.wxs"></wxs>
+<view class="container">
+  <view class="title">{{article.title}}</view>
+  <view class="data">
+    <view>{{filters.substring(article.createTime,0,10)}}</view>
+    <view>阅读数({{article.watched}})</view>
+    <view bindtap="praise">
+      <van-icon name="good-job" color="{{article.isLike?'#ff6428':'#999'}}" size="14px" />
+      <text>({{article.likedCount}})</text>
+    </view>
+  </view>
+  <view class="abstract mb15">
+    <view class="abstract-title">公司简介</view>
+    <view class="abstract-text">{{article.abstract}}</view>
+  </view>
+  <rich-text class='text' nodes="{{article.content}}"></rich-text>
+  <van-popup show="{{!isRole}}" overlay-style="background: #666;" custom-style="background: #666;color: #fff;">暂无权限</van-popup>
+</view>

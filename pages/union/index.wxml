@@ -1,0 +1,24 @@
+<!--pages/union/index.wxml-->
+<view class="container">
+  <view wx:for="{{liveList}}" wx:key="index">
+    <view class="title mb15">{{item.Title}}</view>
+    <view bindtap="detail" id="{{index}}" class="nuion mb15">
+      <van-image width="100%" height="150" radius="6" lazy-load show-loading src="{{item.WxBanner}}" />
+      <view class="nuion-title">{{item.Description}}</view>
+    </view>
+  </view>
+  <van-overlay show="{{isShowModal}}" bindtap="showModal">
+    <view class="wrapper">
+      <view class="block password" catchtap="noop">
+        <view class="block-title">暂无权限</view>
+        <form class="form" bindsubmit="showModalHide">
+          <input name="password" type="text" value="请联系客服电话：400-656-5063" disabled />
+          <view class="psd-btn">
+            <button class="btn" form-type="submit">确认</button>
+            <button class="btn close" bindtap="showModalHide">取消</button>
+          </view>
+        </form>
+      </view>
+    </view>
+  </van-overlay>
+</view>

@@ -1,0 +1,133 @@
+/**index.wxss**/
+.title{
+  color: #ccc;
+  font-size: 14px;
+  border-left: 3px solid #ff6428;
+  margin-bottom: 15px;
+  padding-left: 8px;
+  display: flex;
+  justify-content: space-between;
+}
+.title text{
+  font-size: 16px;
+  color: #000;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.live{
+  background: #fff;
+  padding: 10px;
+}
+.swiper{
+  width: 100%;
+  height: 150px;
+  overflow:hidden;
+  border-radius: 5px;
+}
+.swiper-slide{
+  width: 100%;
+  height: inherit;
+  border-radius: 5px;
+}
+.news{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+.news-left{
+  display: flex;
+  font-size: 13px;
+  color: #565656;
+}
+.news-left-title{
+  font-weight: bold;
+  color: #666;
+}
+.news-swiper{
+   height: 20px;
+   width: 50vw;
+ }
+.news-swiper-item {
+   overflow: hidden;
+   text-overflow: ellipsis;
+   white-space: nowrap;
+ }
+.news-right{
+   color: #fff;
+   padding: 1px 10px;
+   font-size: 10px;
+   border-radius: 10px;
+   background: -webkit-linear-gradient(left, #ffac36 , #ff6428);
+   display: flex;
+   align-items: center;
+ }
+ .news-right van-icon{
+   margin-right: 2px;
+ }
+
+.special-column{
+  background: #fff;
+  padding: 10px;
+}
+.special-column-li{
+  display: flex;
+  justify-content: space-between;
+  padding: 3px;
+}
+.special-column-li-left{
+  flex: 1;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.special-column-li-left text{
+  background: -webkit-linear-gradient(left, #ff6428, #ffac36);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-transform: uppercase;
+  margin-right: 3px;
+}
+.special-column-li-time{
+  color: #ccc;
+  font-size: 12px;
+  text-align: right;
+  margin-left: 10px;
+}
+
+.teacher{
+  background: #fff;
+  padding: 10px;
+}
+.teacher-ul{
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.teacher-li{
+  width: 48%;
+}
+.teacher-li-banner{
+  position: relative;
+}
+.watched{
+  position: absolute;
+  bottom: 3px;
+  left: 3px;
+  font-size: 12px;
+  color: #fff;
+}
+.watched van-icon{
+  position: relative;
+  top: 2px;
+  margin-right: 2px;
+}
+.teacher-li-title{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.teacher-li-time{
+  color: #999;
+  font-size: 12px;
+  margin-bottom: 5px;
+}

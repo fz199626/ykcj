@@ -1,0 +1,36 @@
+/* pages/login/forget-check/index.wxss */
+.container{
+  background: #fff;
+  height: 100%;
+}
+.content{
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+image{
+  margin: auto;
+}
+.logo{
+  padding-top: 50px;
+}
+.logo image{
+  width: 100px;
+  height: 100px;
+}
+.icon-title image{
+  width: 200px;
+}
+.forget{
+  margin: 25px 0;
+}
+.btn{
+  width: 90%;
+  margin: 40px auto 15px;
+  color: #fff;
+  background: #ff6428;
+}
+.btn[disabled]{
+  color:#fff !important;
+  background: #ffae98 !important;
+}

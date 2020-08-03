@@ -1,0 +1,53 @@
+/* pages/daily-column/details/index.wxss */
+.container{
+  height: 100%;
+  background: #fff;
+  padding: 20px;
+  overflow: auto;
+}
+.title{
+  font-size: 20px;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.data{
+  color: #999;
+  font-size: 12px;
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+.data van-icon{
+  position: relative;
+  top: 3px;
+}
+.data view{
+  margin: 0 3px;
+}
+.data view text{
+  /* color: #ff6428; */
+}
+.abstract{
+  background: #efefef;
+  padding: 20px;
+  border-radius: 8px;
+}
+.abstract-title{
+  border-left: 3px solid #ff6428;
+  padding-left: 5px;
+  font-size: 16px;
+  color: #666;
+}
+.abstract-text{
+  font-size: 14px;
+  color: #999;
+  padding-left: 8px;
+  margin: 5px 0;
+}
+.text{
+  font-size: 15px;
+  color: #666;
+}

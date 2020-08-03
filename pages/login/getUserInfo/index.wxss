@@ -1,0 +1,70 @@
+/* pages/login/getUserInfo/index.wxss */
+.container{
+  background: #fff;
+  height: 100%;
+}
+.content{
+  text-align: center;
+  width: 90%;
+  margin: auto;
+}
+image{
+  margin: auto;
+}
+.logo{
+  padding-top: 50px;
+}
+.logo image{
+  width: 100px;
+  height: 100px;
+}
+.icon-title image{
+  width: 200px;
+}
+.success-icon{
+  width: 70px;
+  height: 70px;
+  margin: 30px 0 10px;
+}
+.tips{
+  color: #888;
+  font-size: 14px;
+  letter-spacing: 1px;
+  text-align: left;
+  margin: 20px 5%;
+}
+.tips text{
+  background: #888;
+  display: inline-block;
+  width: 5px;
+  height: 5px;
+  border-radius: 5px;
+  position: relative;
+  top: -3px;
+  margin-right: 10px;
+}
+.bold{
+  font-weight: bold;
+  color: #666;
+  font-size: 16px;
+}
+.br{
+  width: 90%;
+  border-bottom: 2px solid #eee;
+  margin: 40px 5%;
+}
+.btns{
+  display: flex;
+  justify-content: space-between;
+}
+.btn{
+  margin: 40px auto 15px;
+  color: #fff;
+  background: #ff6428;
+  border-radius: 25px;
+  width: 45%;
+}
+.cancel{
+  background: #666;
+  opacity: .2;
+}
